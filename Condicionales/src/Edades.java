@@ -8,7 +8,7 @@ public class Edades {
         edad = sc.nextInt();
         if (edad < 4) {
             System.out.println("Puede entrar gratis");
-        }else if (edad <4 && edad < 18) {
+        }else if (edad <= 18) {
             System.out.println("Debe pagar $110 pesos por la entrada");
         }else{
             System.out.println("Debe pagar $190 pesos por la entrada");
