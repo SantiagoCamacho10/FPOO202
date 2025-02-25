@@ -1,8 +1,16 @@
 public class Spartan {
-    public String nombre;
-    public int escudo;
-    public int salud;
-    public String armaprincipal;
+
+    private String nombre;
+    private int escudo, salud;
+    private String armaprincipal;
+
+    // Constructor
+    public Spartan(String nombre, int escudo, int salud, String armaprincipal) {
+        this.nombre = nombre;
+        this.escudo = escudo;
+        this.salud = salud;
+        this.armaprincipal = armaprincipal;
+    }
 
     public void MostrarInfo(){
         System.out.println("-------MOSTRAR INFO DEL SPARTAN------");
@@ -26,5 +34,40 @@ public class Spartan {
         }else{
             System.out.println(nombre+ " no esta corriendo");
         }
+    }
+    private void ConsultaCortana(){
+        System.out.println("Conversacion privada");
+    }
+    //Zona de Getts y Setts
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEscudo() {
+        return escudo;
+    }
+
+    public void setEscudo(int escudo) {
+        this.escudo = escudo;
+    }
+
+    public int getSalud() {
+        return salud;
+    }
+
+    public void setSalud(int salud) {
+        this.salud = salud;
+    }
+
+    public String getArmaprincipal() {
+        return armaprincipal;
+    }
+
+    public void setArmaprincipal(String armaprincipal) {
+        this.armaprincipal = armaprincipal;
     }
 }

@@ -1,13 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         //Crear el primer objeto
-        Spartan masterChief = new Spartan();
-
-        //Usar Atributos
-        masterChief.nombre="John";
-        masterChief.salud=100;
-        masterChief.escudo=100;
-        masterChief.armaprincipal="Martillo Gravitatorio";
+        Spartan masterChief = new Spartan("John",100,100,"Martillo Gravitatorio");
 
         //Invocamos los metodos
         masterChief.MostrarInfo();
@@ -15,19 +9,21 @@ public class Main {
         masterChief.RecargarArma(75);
         masterChief.Correr(true);
 
-        //Creamos el segundo objeto
-        Spartan Cortana = new Spartan();
+        /*Intento de uso de un metodo privado
+        masterChief.ConsultaCortana();*/
 
-        //Usar Atributos
-        masterChief.nombre="Cortana";
-        masterChief.salud=1000;
-        masterChief.escudo=1000;
-        masterChief.armaprincipal="Espada de la Misericordia";
+        //Usamos get y set para cambiar atributo: nombre
+        masterChief.setNombre("Santiago Gravitatorio");
+        masterChief.MostrarInfo();
+        System.out.println(masterChief.getNombre());
+
+        //Creamos el segundo objeto
+        Spartan Cortana = new Spartan("Cortana",1000,1000, "Espada de la Misericordia");
 
         //Invocamos los metodos
-        masterChief.MostrarInfo();
-        masterChief.Atacar("Elite");
-        masterChief.RecargarArma(100);
-        masterChief.Correr(false);
+        Cortana.MostrarInfo();
+        Cortana.Atacar("Elite");
+        Cortana.RecargarArma(100);
+        Cortana.Correr(false);
     }
 }
