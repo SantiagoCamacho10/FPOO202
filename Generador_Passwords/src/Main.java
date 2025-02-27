@@ -2,18 +2,18 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        generar_Pass pass = new generar_Pass();
+        generar_Pass pass = new generar_Pass(8,false, false);
         String longitud = JOptionPane.showInputDialog("Ingresa la Longitud de la contraseña: ");
         // Verificar si el usuario no ingresó ningún valor o presionó cancelar
         if (longitud == null || longitud.trim().equals("")) {
-            pass.lenght = 8; // Valor por defecto
+            pass.setLenght(8); // Valor por defecto /////////////////////////
         } else {
             try {
-                pass.lenght = Integer.parseInt(longitud);
+                pass.setLenght(Integer.parseInt(longitud)); /////////////////////////
             } catch (NumberFormatException e) {
                 // valor no numérico
                 JOptionPane.showMessageDialog(null, "Valor inválido, se usará 8 por defecto.");
-                pass.lenght = 8;
+                pass.setLenght(8); /////////////////////////
             }
         }
 
@@ -23,10 +23,10 @@ public class Main {
         if (option == JOptionPane.OK_OPTION) {
             if (checkBox.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Casilla marcada");
-                pass.include_May = true;
+                pass.setInclude_May(true); /////////////////////////
             } else {
                 JOptionPane.showMessageDialog(null, "Casilla no marcada");
-                pass.include_May = false;
+                pass.setInclude_May(false); /////////////////////////
             }
         }
 
@@ -36,15 +36,15 @@ public class Main {
         if (options == JOptionPane.OK_OPTION) {
             if (checkBocs.isSelected()) {
                 JOptionPane.showMessageDialog(null, "Casilla marcada");
-                pass.caract_Esp = true;
+                pass.setCaract_Esp(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Casilla no marcada");
-                pass.caract_Esp = false;
+                pass.setCaract_Esp(false);
             }
         }
 
         // Generar y mostrar la contraseña
-        String password = generar_Pass.getPassword(pass.lenght, pass.include_May, pass.caract_Esp);
+        String password = generar_Pass.getPassword(pass.getLenght(), pass.isInclude_May(), pass.isCaract_Esp()); /////////////////////////
         JOptionPane.showMessageDialog(null, "La contraseña generada es: " + password);
     }
 }

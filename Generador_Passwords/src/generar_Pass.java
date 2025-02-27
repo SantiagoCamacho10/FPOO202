@@ -1,9 +1,15 @@
 import javax.swing.*;
 
 public class generar_Pass {
-    public int lenght = 8;
-    public boolean include_May;
-    public boolean caract_Esp;
+    public generar_Pass(int lenght, boolean include_May, boolean caract_Esp) {
+        this.lenght = lenght;
+        this.include_May = include_May;
+        this.caract_Esp = caract_Esp;
+    }
+
+    private int lenght = 8;
+    private boolean include_May;
+    private boolean caract_Esp;
 
     public static String NUMEROS = "0123456789";
     public static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -37,6 +43,29 @@ public class generar_Pass {
             key += ESPECIALES;
         }
         return getPassword(key, length);
+    }
+    public boolean isInclude_May() {
+        return include_May;
+    }
+
+    public void setInclude_May(boolean include_May) {
+        this.include_May = include_May;
+    }
+
+    public int getLenght() {
+        return lenght;
+    }
+
+    public void setLenght(int lenght) {
+        this.lenght = lenght;
+    }
+
+    public boolean isCaract_Esp() {
+        return caract_Esp;
+    }
+
+    public void setCaract_Esp(boolean caract_Esp) {
+        this.caract_Esp = caract_Esp;
     }
 }
 
