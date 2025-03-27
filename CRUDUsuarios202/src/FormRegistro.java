@@ -48,8 +48,9 @@ public class FormRegistro extends javax.swing.JFrame {
         txt_nombre = new javax.swing.JTextField();
         txt_correo = new javax.swing.JTextField();
         txt_contra = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btn_guardar.setText("Guardar");
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +86,10 @@ public class FormRegistro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(90, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(71, 71, 71))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,17 +107,16 @@ public class FormRegistro extends javax.swing.JFrame {
                     .addComponent(txt_contra)
                     .addComponent(txt_nombre))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(71, 71, 71))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel4)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -163,10 +167,7 @@ public class FormRegistro extends javax.swing.JFrame {
             txt_contra.setText("");
         }
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
-        //limpiarCampos();
-            txt_nombre.setText("");
-            txt_correo.setText("");
-            txt_contra.setText("");
+        limpiarCampos();
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
     private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
@@ -217,6 +218,7 @@ public class FormRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txt_contra;
     private javax.swing.JTextField txt_correo;
     private javax.swing.JTextField txt_nombre;
