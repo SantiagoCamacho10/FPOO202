@@ -59,5 +59,29 @@ public class UserCRUD {
             return null;
         }
     }
-
+    public boolean editarusuario(int id, String nom,String cor, String contra){
+        String selectSql = "UPDATE usuarios SET Nombre = ?, Correo = ?, Contrasena = ? WHERE Id = ?";
+        try{
+            PreparedStatement ps = conexion.prepareStatement(selectSql);
+            ps.setString(1, nom);
+            ps.setString(2, cor);
+            ps.setString(3, contra);
+            ps.setInt(4, id);
+            return ps.executeUpdate()>0;
+        }catch(SQLException e){
+            System.out.println("Error al intentar update" + e.getMessage());
+            return false;
+        }
+    }
+    public boolean eliminarusuario(int id){
+        String deleteSql = "DELETE FROM usuarios WHERE Id = ?";
+        try{
+            PreparedStatement ps = conexion.prepareStatement(deleteSql);
+            ps.setInt(1, id);
+            return ps.executeUpdate()>0;
+        }catch(SQLException e){
+            System.out.println("Error al intentar update" + e.getMessage());
+            return false;
+        }
+    }
 }
